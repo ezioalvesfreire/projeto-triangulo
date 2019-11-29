@@ -1,0 +1,67 @@
+<style>
+    body {
+        background-color: cadetblue !important;
+        font: normal 15pt Arial;
+    }
+    
+    header {
+        background-color: white;
+        border-radius: 10px;
+    }
+    
+    section {
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+        width: 500px;
+        margin: auto;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0, 363);
+    }
+    
+    footer {
+        color: white;
+        text-align: center;
+        font-style: italic;
+        padding: 40px;
+    }
+</style>
+
+<body>
+    <h1>Teste o tipo de triângulo</h1>
+
+    <header>
+
+        <section>
+            <form [formGroup]="formGroup" autocomplete="off" (ngSubmit)="retornaTipoTriangulo()">
+                <p>informe o valor do lado A:
+                    <input id="campo1" name="campo1" pInputText formControlName="campo1" type="number" autocomplete="off" />
+                </p>
+                <p>informe o valor do lado B:
+                    <input id="campo2" name="campo2" pInputText formControlName="campo2" type="number" autocomplete="off" />
+                </p>
+                <p>informe o valor do lado C:
+                    <input id="campo3" name="campo3" pInputText formControlName="campo3" type="number" autocomplete="off" />
+                </p>
+
+                <button type="submit">verificar</button>
+                <p *ngIf="isosceles">Triângulo isósceles</p>
+                <p *ngIf="escaleno">Triângulo escaleno</p>
+                <p *ngIf="equilatero">Triângulo equilátero</p>
+
+                <!-- <div id="res">
+                    <p id="tipo-triangulo">Informe os dados acima !</p>
+                </div> -->
+                <p>Teste o tipo de triângulo com typescript e Angular </p>
+            </form>
+            <img width="180" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+            />
+
+
+            <!--<div id="foto">
+                <img id="imagem" src="triangulos/dados.jpg" alt="imagem dos dados">
+            </div>  -->
+        </section>
+    </header>
+
+    <footer>Desenvolvido por Ezio Alves</footer>
+</body>
